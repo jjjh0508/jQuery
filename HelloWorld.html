@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -13,9 +14,12 @@
     <div class="welcome"></div>
     <script type="text/javascript">
         $('.welcome').html('hello world! coding everybody!').css('background-color', 'yellow');
+        //.html() 제이쿼리가 지원하는 기능
+        //css 첫번째 인자 background-color, 두번째 인자 yellow
+        // 체이닝 지원
         // jQuery('.welcome').html('hello world! coding everybody').css('background-color', 'yellow');
     
-            // ${제어대상}.method1().method2()
+        // ${제어대상}.method1().method2()
    
     </script>
 </body>

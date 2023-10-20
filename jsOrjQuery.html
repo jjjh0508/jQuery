@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!--버전 1.7 이후 live를 사용하지 않는다. on를 사용 할 겨우 스크립트가 위에 있기 때문에 ready를 사용-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#navigation li').on('click', function () {
+                $('#navigation li').removeClass('selected');
+                $(this).addClass('selected');
+            })
+        })
+    </script>
+
+
+    <!-- <script type="text/javascript">
+        function addEvent(target, eventType, eventHandler, useCapture) {
+            if (target.addEventListener) { // W3C DOM
+                target.addEventListener(eventType, eventHandler, useCapture ? useCapture : false);
+            } else if (target.attachEvent) {  // IE DOM
+                var r = target.attachEvent("on" + eventType, eventHandler);
+            }
+        }
+        addEvent(window, 'load', function (eventObj) {
+            var nav = document.getElementById('navigation');
+            for (var i = 0; i < nav.childNodes.length; i++) {
+                var child = nav.childNodes[i];
+                if (child.nodeType == 3)
+                    continue;
+                addEvent(child, 'click', onClickHandler);
+            }
+        })
+        const onClickHandler = (event) => {
+            let nav = document.getElementById('navigation');
+            for (var i = 0; i < nav.childNodes.length; i++) {
+                var child = nav.childNodes[i];
+
+                if (child.nodeType == 3)
+                    continue;
+                child.className = '';
+            }
+            event.target.className = "selected"
+        }
+
+        
+    </script> -->
+    <style type="text/css">
+        #navigation li {
+            list-style: none;
+            float: left;
+            padding: 5px;
+        }
+
+        #navigation {
+            cursor: pointer;
+        }
+
+        #navigation .selected {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="divclass">확인</div>
+    <ul id="navigation">
+        <!-- <li onclick='onClickHandler(event)'>HTML</li>
+        <li onclick='onClickHandler(event)'>CSS</li>
+        <li onclick='onClickHandler(event)'>javascript</li>
+        <li onclick='onClickHandler(event)'>jquery</li>
+        <li onclick='onClickHandler(event)'>mySql</li> -->
+        <li class="selected">HTML</li>
+        <li>CSS</li>
+        <li>javascript</li>
+        <li>jquery</li>
+        <li>mySql</li>
+
+
+    </ul>
+</body>
+
+
+
+</html>
