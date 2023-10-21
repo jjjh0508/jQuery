@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- wrapper란
+        jQuery(엘리먼트 | CSS 스타일 선택자)
+        jQuery()<- 부분이 wrapper, 인자로 전달된 요소들에 jQuery의 기능성을 부가해서 반환.
+        $(''){} 여기서 $와 같은 의미이다
+
+        레퍼의 안전한 사용 
+
+        $를 사용하는 다른 라이브러리와의 충돌을 피하기 위해 다음과 같은 방법을 사용하기도 한다
+        jQuery('body').html('hello world');
+       
+        (function($){
+            $('body').html('hello world');
+        })(jQuery)
+    
+
+        제어대상을 지정하는 방법
+        jQuery(selector,[context])
+        jQuery(element)
+    -->
+
+    <!-- 예제1 jQuery(selector,[context]) -->
+    <ul>
+        <li>test2</li>
+    </ul>
+
+    <ul class="foo">
+        <li>test</li>
+    </ul>
+    <script type="text/javascript">
+        (function ($) {
+            $('ul.foo').click(function () {
+                $('li', this).css('background-color', 'red');
+            });
+        })(jQuery)
+    </script>
+
+    <!-- 예제2 jQuery(element) -->
+
+    <script type="text/javascript">
+        jQuery(document.body).css('background-color', 'black');
+    </script>
+
+</body>
+
+</html>

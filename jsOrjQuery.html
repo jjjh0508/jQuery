@@ -10,12 +10,21 @@
 
     <!--버전 1.7 이후 live를 사용하지 않는다. on를 사용 할 겨우 스크립트가 위에 있기 때문에 ready를 사용-->
     <script type="text/javascript">
-        $(document).ready(function () {
+
+        // $(document).ready(function () {
+        //     $('#navigation li').on('click', function () {
+        //         $('#navigation li').removeClass('selected');
+        //         $(this).addClass('selected');
+        //     })
+        // })
+        // 위아래 같은 의미 
+        $(function () {
             $('#navigation li').on('click', function () {
                 $('#navigation li').removeClass('selected');
                 $(this).addClass('selected');
             })
         })
+
     </script>
 
 
