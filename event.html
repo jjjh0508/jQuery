@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--이벤트란?
+        시스템에서 일어나는 사건을 의미
+        javascript나 jquery에게 이벤트란 브라우져에서 일어나는 사건을 의미한다(클릭, 마우스 이동, 타이핑, 페이지 로딩등)
+        이벤트가 발생 했을 때 작동할 로직을 시스템에게 알려두면 이벤트가 발생했을 때 시스템이 그 로직을 호출한다.
+
+        jquery의 이벤트
+        크로스브라우징의 문제를 해결해줌
+        (웹 페이지 제작 시에 모든 브라우저에서 깨지지 않고 의도한 대로 올바르게(호환성) 나오게 하는 작업을 말한다.)
+        bind로 이벤트 핸들러를 설치하고 , unbind로 제거
+        trigger로 이벤트 핸들러를 강제로 실행
+        click , ready와 같이 다양한 이벤트 헬퍼(helper)를 제공함
+        live를 이용하면 현재 존재하지 않는 엘리먼트에 이벤트 핸들러를 설치 할 수 있다
+        live는 1.7이후 사용되지 않는다.
+    -->
+    <!--1.7 이상부터 bind 대신 on ,off사용-->
+    <script type="text/javascript">
+        function clickHandler(e) {
+            alert("thank you");
+        }
+        $(document).ready(function () {
+            $('#click_me').on('click', clickHandler);
+            $('#remove_event').on('click', function (e) {
+                $('#click_me').off('click', clickHandler);
+            });
+            $('#trigger_event').on('click', function (e) {
+                $('#click_me').trigger('click');
+            })
+        })
+    </script>
+
+
+    <input id="click_me" type="button" value="click_me" />
+    <input id="remove_event" type="button" value="undind" />
+    <input id="trigger_event" type="button" value="trigger" />
+</body>
+
+</html>
