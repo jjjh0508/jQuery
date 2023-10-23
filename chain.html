@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--chain이란?
+        jQuery의 메소드들은 반환값으로 자기 자신을 반환해야한다는 규칙을 가지고 있다.
+        이를 이용하면 한번 선택한 대상에 대해서 연속적으로 제어할 수 있다.
+
+        chain의 장점
+        코드가 간결해진다.
+        인간의 언어와 유사해서 사고의 자연스러운 과정과 일치한다
+
+
+        탐색(traversing)
+        chain의 대상을 바꿔서 체인을 계속 연장시킬 수 있는 방법
+        너무 복잡한 chain은 코드의 가독성을 떨어트릴 수 있다.
+    -->
+    <a id="tutorial" href="http://jquery.com" target="_self">jquery</a>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        jQuery('#tutorial').attr('href', 'http://jquery.org').attr('target', '_blank').css('color', 'red');
+    </script>
+    <!-- <script type="text/javascript">
+        var tutorial = document.getElementById('tutorial');
+        tutorial.setAttribute('href', 'http://jquery.org');
+        tutorial.setAttribute('target', '_blank');
+        tutorial.style.color = 'red';
+    </script> -->
+
+
+
+    <!--예제-->
+    <ul class="first">
+        <li class="foo">list item 1</li>
+        <li>list item 2</li>
+        <li class="bar">list item 3</li>
+    </ul>
+    <ul class="second">
+        <li class="foo">list item 1</li>
+        <li>list item 2</li>
+        <li class="bar">list item 3</li>
+    </ul>
+
+    <script type="text/javascript">
+        $('ul.first').find('.foo').css('background-color', 'red').end().find('.bar').css('background-color', 'blue');
+        $('ul.second').find('.foo').css('background-color', 'blue').end().find('.bar').css('background-color', 'red');
+    </script>
+</body>
+
+</html>
