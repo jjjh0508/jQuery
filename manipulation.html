@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        div {
+            border: 2px blue solid;
+            margin: 2px;
+            padding: 2px;
+        }
+
+        p {
+            /* background: yellow; */
+            margin: 2px;
+            padding: 2px;
+            cursor: pointer;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .highlight {
+            background: yellow;
+        }
+
+        strong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!--엘리먼트 제어
+        jQuery는 엘리먼트를 제어하는 일관되고 풍부한 기능등을 제공한다.
+        http://api.jquery.com/category/manipulation/
+
+        자식으로 삽입(.append(), .appendTo(), .htmt(), .prepent(), .prepentTo(), .text());
+        형제로 삽입(.after(), .before(), .insertAfter(), .insertBefore())
+        부모로 감싸기(.unwrap(), .wrap(), .wrapAll(), wrapInner())
+        -->
+
+
+    <!--자식으로 사입-->
+    <!-- <p>
+        I would like to say:
+    </p> -->
+    <!-- <script>$('p').append("<strong>Hello</strong>")</script>
+     -->
+
+
+    <!--형제로 삽입-->
+    <!-- <p>
+        I would like to say:
+    </p> -->
+    <!-- <script>$('p').after("<b>Hello</b>")</script> -->
+
+
+    <!--부모로 삽입-->
+    <!-- <span>Span Text</span>
+    <strong>What about me</strong>
+    <span>Another One</span> -->
+    <!-- <script>$('span').wrap("<div><div><p><em><b></b></em></p></div></div>");</script> -->
+
+
+    <!--삭제-->
+    <!-- <p>
+        Hello
+    </p>
+    how are
+    <p>
+        you
+    </p>
+    <button>Call remove() paragraphs</button>
+    <script>$('button').on('click', function () {
+            $('p').remove();
+        })</script> -->
+
+    <!--치환-->
+    <!-- <p>Hello</p>
+    <p>cruel</p>
+    <p>World</p>
+    <button>replace</button>
+    <script>$('button').on('click', function () {
+            $("<b>Paragraph</b>").replaceAll('p');
+        })</script> -->
+    <!-- $("<b>Paragraph</b>")의 경우 선택자가 아니라 바꿔줄 태그-->
+
+    <!--클래스-->
+    <!-- <p class="blue"> click to toggle</p>
+    <p class="blue highlight"> highlight</p>
+    <p class="blue"> on these</p>
+    <p class="blue"> paragraphs</p>
+    <script>
+        $('p').click(function () {
+            $(this).toggleClass('highlight');
+            
+        })
+    </script> -->
+
+
+    <!--속성제어-->
+    <input type="text" value="some text">
+    <p>
+    </p>
+
+    <script>$('input').keyup(function () {
+            var value = $(this).val();
+            $('p').text(value);
+        })</script>
+    <!--keyup : 사용자 키를 누르면 땠을때 발생하는 이벤트-->
+    <!--마지막 keyup : 초기값 세팅을 위한 트리거-->
+
+</html>
