@@ -26,10 +26,13 @@
 </head>
 
 <body>
-    <!-- <p>
+    <!--
+        http://api.jquery.com/category/forms/
+    -->
+    <p>
         <input type="text" />
         <span></span>
-    </p> -->
+    </p>
 
     <form action="javascript:alert('success!');">
         <div>
@@ -39,8 +42,8 @@
         </div>
     </form>
     <span></span>
-    <!-- <script>
-        $('input').focus(function () {
+    <script>
+        $('input:first').focus(function () {
             $(this).next('span').html('focus');
         }).blur(function () {
             $(this).next('span').html('blur');
@@ -49,14 +52,14 @@
         }).select(function () {
             $(this).next('span').html('select');
         });
-    </script> -->
+    </script>
     <script>
         $('form').submit(function () {
-            if ($('input:first').val() == 'correct') {
-                $('span').text("Validated...").show();
+            if ($('input:eq(1)').val() == 'correct') {
+                $('span:eq(1)').text("Validated...").show();
                 return true;
             }
-            $('span').text('not valid!').show().fadeOut(1000);
+            $('span:eq(1)').text('not valid!').show().fadeOut(1000);
             return false;
         })
     </script>
