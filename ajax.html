@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Ajax란
+        Asynchronous JavaScript and XML의 약자
+        자바스크립트를 이용해서 비동기식으로 서버와 통신하는 방식 . 이 때 XML을 이용한다
+        꼭 XML을 이용할 필요는 없고 , 최근에는 json을 더 많이 이용한다.
+        비동기식이란 여러가지 일이 동시적으로 발생한다는 뜻으로 , 서버와 통신하는 동안 다른 작업을 할수 있다 는 의미이다
+
+        $.ajax(settings)
+        jQuery를 이용한 ajax통신의 가장 기본적인 API
+        주요속성
+            data: 서버에 전송할 데이터 , key/value형식의 객체
+            dataType: 서버가 리턴하는 데이터 타입(xml,json,script,html)
+            type: 서버로 전송하는 데이터의 타입 (POST,GET)
+            url: 데이터를 전송할 URL
+            success: ajax통신에 성공했을때 호출될 이벤트 핸들러
+    -->
+    <div id="result">
+
+    </div>
+
+    <img id="hobbyImage" />
+
+    <script>
+        $(document).ready(
+            $.ajax({
+                url: 'http://localhost:8001/hobbys',
+                dataType: 'json',
+                type: 'GET',
+                success: function (result) {
+                    $('#result').html(result['value'][0].hobbyTitle);
+                    // $('#hobbyImage').attr('src', 'url' + result['value'][0].imageIdDTO['path']);
+
+                }
+            }))
+
+    </script>
+</body>
+
+</html>
